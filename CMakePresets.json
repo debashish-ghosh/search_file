@@ -1,0 +1,75 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 29,
+    "patch": 2
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "hidden": true,
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
+      }
+    },
+    {
+      "name": "Multi-Config",
+      "inherits": "default",
+      "description": "Ninja Multi-Config build"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug",
+      "configurePreset": "Multi-Config",
+      "configuration": "Debug"
+    },
+    {
+      "name": "Release",
+      "configurePreset": "Multi-Config",
+      "configuration": "Release"
+    },
+    {
+      "name": "RelWithDebInfo",
+      "configurePreset": "Multi-Config",
+      "configuration": "RelWithDebInfo"
+    }
+  ],
+  "packagePresets": [
+    {
+      "name": "package-tgz",
+      "configurePreset": "Multi-Config",
+      "description": "Package using TGZ generator",
+      "variables": {
+        "CPACK_GENERATOR": "TGZ"
+      }
+    },
+    {
+      "name": "package-zip",
+      "configurePreset": "Multi-Config",
+      "description": "Package using ZIP generator",
+      "variables": {
+        "CPACK_GENERATOR": "ZIP"
+      }
+    },
+    {
+      "name": "package-deb",
+      "configurePreset": "Multi-Config",
+      "description": "Package using DEB generator",
+      "variables": {
+        "CPACK_GENERATOR": "DEB"
+      }
+    },
+    {
+      "name": "package-rpm",
+      "configurePreset": "Multi-Config",
+      "description": "Package using RPM generator",
+      "variables": {
+        "CPACK_GENERATOR": "RPM"
+      }
+    }
+  ]
+}

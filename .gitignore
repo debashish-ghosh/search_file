@@ -1,0 +1,16 @@
+# CMake build
+/build/
+
+# IDE files
+*.code-workspace
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Archives
+*.tar.gz
+*.zip
+*.tgz
+*.7z
