@@ -1,10 +1,5 @@
 {
   "version": 10,
-  "cmakeMinimumRequired": {
-    "major": 3,
-    "minor": 29,
-    "patch": 2
-  },
   "configurePresets": [
     {
       "name": "default",

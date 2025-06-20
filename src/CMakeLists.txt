@@ -17,11 +17,6 @@ add_executable(search_file search_file.cxx)
 
 target_link_libraries(search_file PRIVATE thread_pool)
 
-target_link_options(search_file
-  PUBLIC
-    -Wl,-rpath=$ENV{DBC_PATH}/opt/gcc/usr/local/lib64,--enable-new-dtags
-)
-
 install(TARGETS search_file
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib
